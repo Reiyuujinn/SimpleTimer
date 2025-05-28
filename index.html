@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2><span class="judul">Timer</span></h2>
+        <input type="number" id="input-time" placeholder="Input Second(s)" min="1">
+        <div id="timer">00:00</div>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="resetTimer()">Reset</button>
+    </div>
+
+    <audio id="alarm-sound" src="assets/alarmtimersound.mp3" preload="auto"></audio>
+
+<div id="timeout-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>⏰ Time Out! Reset timer?</p>
+    <div class="modal-buttons">
+        <button onclick="closeModal();">Cancel</button>
+        <button onclick="resetTimer(); closeModal();">OK</button>
+    </div>
+  </div>
+</div>
+
+<div id="error-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>⚠️ Please enter a valid time in seconds.</p>
+    <button onclick="closeErrorModal();">OK</button>
+  </div>
+</div>
+
+
+    <script src="timer.js"></script>
+</body>
+</html>
